@@ -13,7 +13,7 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 .navbar {
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
     background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid #e7e5e4;
@@ -485,9 +485,10 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 
 .influence-detail {
     position: absolute;
-    top: 0;
+    /* top: 5rem; */
     right: 0;
-    width: min(620px, 56%);
+    width: min(500px, 56%);
+    height: calc(100%);
     min-height: 620px;
     padding: 3rem;
     border-radius: 2rem;
@@ -603,10 +604,10 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 
     .influence-detail {
         position: fixed;
-        inset: 1rem;
+        inset: 10rem;
         width: auto;
         min-height: auto;
-        max-height: calc(100vh - 2rem);
+        max-height: calc(100vh - 20rem);
         overflow-y: auto;
         transform: translateY(110%);
     }
@@ -655,4 +656,252 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 
 .influence-detail--compact strong {
     font-weight: 600;
+}
+
+/* =========================
+   GLOBAL RESPONSIVE FIXES
+   ========================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+img,
+svg,
+video,
+iframe {
+    max-width: 100%;
+}
+
+/* Планшеты */
+@media (max-width: 1024px) {
+    .main-title {
+        font-size: 3.2rem;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+
+    .hero {
+        height: 70vh;
+        padding: 0 1.25rem;
+    }
+
+    .timeline-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .era-card-new {
+        height: 340px;
+    }
+}
+
+/* Телефоны */
+@media (max-width: 768px) {
+
+    .influence-detail {
+        top: 10vh;
+        right: 1rem;
+        left: 1rem;
+        max-height: 70vh;
+    }
+    body {
+        overflow-x: hidden;
+    }
+
+    .navbar > div,
+    nav > div {
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+    }
+
+    .nav-links a {
+        margin-left: 0;
+        font-size: 0.75rem;
+    }
+
+    .logo {
+        font-size: 1.25rem;
+    }
+
+    .hero {
+        height: auto;
+        min-height: 75vh;
+        padding: 6rem 1rem 4rem;
+    }
+
+    .main-title {
+        font-size: clamp(2.4rem, 12vw, 4rem);
+        line-height: 1;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .cta-button {
+        width: 100%;
+        max-width: 320px;
+        padding: 0.9rem 1.5rem;
+        font-size: 0.8rem;
+    }
+
+    section {
+        scroll-margin-top: 90px;
+    }
+
+    .timeline-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .era-card-new {
+        height: 320px;
+    }
+
+    .era-content-overlay {
+        padding: 1.5rem;
+    }
+
+    .glass-card-advanced {
+        padding: 1.5rem !important;
+    }
+
+    .task-item {
+        padding: 1.25rem;
+    }
+
+    #analysis h3,
+    section h3 {
+        font-size: 2.2rem;
+        line-height: 1.1;
+    }
+}
+
+/* Маленькие телефоны */
+@media (max-width: 480px) {
+    .award-card {
+        min-height: 30vh;
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.95rem;
+    }
+
+    .hero {
+        min-height: 70vh;
+    }
+
+    .era-card-new {
+        height: 280px;
+        border-radius: 16px;
+    }
+
+    .era-year-tag {
+        font-size: 0.65rem;
+        padding: 0.4rem 0.75rem;
+    }
+
+    .arrow-circle {
+        width: 40px;
+        height: 40px;
+    }
+
+    .awards-section h2 {
+        font-size: 2rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .award-card {
+        padding: 1.25rem;
+    }
+
+    .award-source {
+        padding: 0.75rem;
+    }
+
+    .influence-card {
+        padding: 1.5rem;
+        min-height: auto;
+    }
+
+    .light-card h2 {
+        font-size: 1.8rem;
+        padding-left: 1rem;
+    }
+
+    .light-card p {
+        font-size: 0.95rem;
+        line-height: 1.65;
+    }
+
+    .dark-card h3 {
+        font-size: 1rem;
+        letter-spacing: 0.15em;
+    }
+
+    .dark-card ul {
+        font-size: 0.85rem;
+        gap: 1.4rem;
+    }
+
+    .detail-button {
+        font-size: 0.6rem;
+        padding: 0.5rem 0.9rem;
+    }
+
+    .influence-detail {
+        padding: 2rem 1.35rem;
+        border-radius: 1.5rem;
+    }
+
+    .detail-close {
+        top: 1rem;
+        right: 1rem;
+        width: 34px;
+        height: 34px;
+    }
+
+    .detail-kicker {
+        font-size: 0.55rem;
+        letter-spacing: 0.22em;
+        padding-right: 2.5rem;
+    }
+
+    .influence-detail--compact p {
+        font-size: 0.78rem;
+        line-height: 1.55;
+    }
+
+    .influence-detail--compact blockquote {
+        font-size: 0.72rem;
+        line-height: 1.45;
+        margin: 0.9rem 0;
+    }
+
+    footer a {
+        width: 100%;
+        max-width: 320px;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        font-size: 0.75rem;
+    }
 }
