@@ -31,51 +31,254 @@
     </header>
 
     <main class="max-w-4xl mx-auto px-4 py-20">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-            
-            <section class="space-y-6" data-aos="fade-right">
-                <h2 class="text-3xl font-bold text-stone-900 border-l-4 border-red-700 pl-6">Золотой фонд мира</h2>
-                <p class="text-lg text-stone-600 leading-relaxed">
-                    Советские фильмы регулярно становились культурными событиями планетарного масштаба. В 1958 году «Летят журавли» получает единственную в истории СССР Золотую пальмовую ветвь в Каннах, открыв миру «новую искренность» советских людей.
+        <input type="checkbox" id="eisenstein-detail" class="influence-toggle">
+        <input type="checkbox" id="tarkovsky-detail" class="influence-toggle">
+        <input type="checkbox" id="vertov-detail" class="influence-toggle">
+
+        <div class="influence-stage">
+            <div class="influence-cards">
+                <section class="influence-card light-card" data-aos="fade-right">
+                    <h2>Золотой фонд мира</h2>
+                    <p>
+                        Советские фильмы регулярно становились культурными событиями планетарного масштаба.
+                        В 1958 году «Летят журавли» получает единственную в истории СССР Золотую пальмовую ветвь в Каннах,
+                        открыв миру «новую искренность» советских людей.
+                    </p>
+                    <p>
+                        Голливуд признавал масштаб советской режиссуры: премии «Оскар» за лучший иностранный фильм
+                        удостоились «Война и мир» Бондарчука, «Дерсу Узала» Куросавы и «Москва слезам не верит» Меньшова.
+                    </p>
+                </section>
+
+                <section class="influence-card dark-card" data-aos="fade-left">
+                    <h3>Влияние на Запад</h3>
+
+                    <ul>
+                        <li>
+                            <strong>Монтаж Эйзенштейна</strong>
+                            стал фундаментом теории кино и одним из ключевых вкладов советского кино в мировой киноязык.
+                            <br>
+                            <label for="eisenstein-detail" class="detail-button">
+                                Подробнее →
+                            </label>
+                        </li>
+
+                        <li>
+                            <strong>Визуальный стиль Тарковского</strong>
+                            повлиял на развитие авторского кино, введя медленный ритм, длинные планы и работу с временем как художественной категорией.
+                            <br>
+                            <label for="tarkovsky-detail" class="detail-button">
+                                Подробнее →
+                            </label>
+                        </li>
+
+                        <li>
+                            <strong>Документалистика Вертова</strong>
+                            сформировала основы современного документального кино и репортажной съемки.
+                            <br>
+
+                            <span class="opacity-70">
+                                Его подход «кино-глаза» переосмыслил роль камеры как инструмента наблюдения реальности.
+                            </span>
+                            <br>
+
+                            <label for="vertov-detail" class="detail-button">
+                                Подробнее →
+                            </label>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+
+            <section class="influence-detail influence-detail--compact">
+                <label for="eisenstein-detail" class="detail-close">×</label>
+
+                <span class="detail-kicker">Источник / теория монтажа</span>
+                <!-- <h2>Монтаж Эйзенштейна</h2> -->
+
+                <p>
+                    Монтаж, разработанный <strong>Сергеем Эйзенштейном</strong>, стал одним из ключевых вкладов советского кино
+                    в мировой киноязык. Его идеи разбираются в учебнике
+                    <a href="https://psv4.userapi.com/s/v1/d/kRHFES8Mu0TxVxFOXFUBN0lUd8z_rZp0-fkWhccGtdupsAkdLG8HCtLfu81xrrqiIG8wzBiGbyT74r5GimOD_vmf719LVa1QalgaGMtD5OmwX3qx6sHyBQ/David_Bordwell_Kristin_Thompson_-_Film_Art_An.pdf" target="_blank">
+                        Film Art: An Introduction
+                    </a>
+                    Дэвида Бордвелла и Кристин Томпсон — одном из самых известных учебников по киноискусству,
+                    используемых в университетских курсах и кинообразовании.
                 </p>
-                <p class="text-lg text-stone-600 leading-relaxed">
-                    Голливуд признавал масштаб советской режиссуры трижды: премии «Оскар» за лучший иностранный фильм удостоились «Война и мир» Бондарчука, «Дерсу Узала» Куросавы (совместное производство) и «Москва слезам не верит» Меньшова.
+
+                <p>
+                    В книге Эйзенштейн показан как режиссёр, который превратил монтаж из технического приёма
+                    в способ создавать смысл, ритм и эмоциональное напряжение.
+                </p>
+
+                <blockquote>
+                    “an event that takes only a few moments in the story is stretched out to several minutes of screen time by means of the technique of film editing”
+                </blockquote>
+
+                <p>
+                    Через монтаж Эйзенштейн мог изменять восприятие времени и усиливать драматическое значение сцены.
+                    Поэтому его подход стал важным ориентиром для авторского, экспериментального и политического кино.
+                </p>
+
+                <blockquote>
+                    “intellectual montage sequences in Eisenstein’s films”
+                </blockquote>
+
+                <p>
+                    Именно благодаря таким примерам <strong>Film Art</strong> закрепляет Эйзенштейна как одну из центральных фигур
+                    мировой теории кино, а сам учебник помогает передавать это влияние новым поколениям студентов и режиссёров.
                 </p>
             </section>
 
-            <section class="bg-stone-900 text-white p-10 rounded-3xl" data-aos="fade-left">
-                <h3 class="text-xl font-bold mb-6 text-red-500 uppercase tracking-widest">Влияние на Запад</h3>
-                <ul class="space-y-6 text-sm font-light leading-relaxed opacity-80">
-                    <li><strong class="text-white opacity-100">Монтаж Эйзенштейна</strong> стал базой для обучения во всех киношколах США и Европы.</li>
-                    <li><strong class="text-white opacity-100">Визуальный стиль Тарковского</strong> вдохновил поколения режиссеров — от Ларса фон Триера до Кристофера Нолана.</li>
-                    <li><strong class="text-white opacity-100">Документалистика Вертова</strong> легла в основу современных форматов съемки и репортажа.</li>
-                </ul>
+            <section class="influence-detail influence-detail--compact tarkovsky-panel">
+                <label for="tarkovsky-detail" class="detail-close">×</label>
+
+                <span class="detail-kicker">Источник / авторское кино</span>
+
+                <p>
+                    Визуальный стиль <strong>Андрея Тарковского</strong> стал важным ориентиром для мирового авторского кино.
+                    Его фильмы строятся не на быстром действии, а на <strong>длинных планах, медленном ритме, символах и ощущении времени</strong>.
+                </p>
+
+                <p>
+                    Сам Тарковский называл кино искусством “запечатлённого времени”, а его подход часто связывают с идеей
+                    <a href="https://archive.org/details/Andrei_Tarkovsky_Sculpting_In_Time" target="_blank">
+                        Sculpting in Time
+                    </a>
+                    — «ваяния времени».
+                </p>
+
+                <p>
+                    Этот стиль повлиял на режиссёров, для которых атмосфера, пауза и визуальная метафора важнее прямого объяснения сюжета.
+                    Влияние Тарковского часто связывают с кино Ларса фон Триера, Терренса Малика, Алехандро Гонсалеса Иньярриту и Кристофера Нолана.
+                </p>
+
+                <blockquote>
+                    “Tarkovsky is the greatest of them all”
+                </blockquote>
+
+                <p>
+                    Эту фразу часто цитируют как оценку Ингмара Бергмана. Она подчёркивает, что Тарковский стал не просто советским режиссёром,
+                    а фигурой мирового масштаба, изменившей представление о том, как кино может передавать память, веру, страх и внутреннее состояние человека.
+                </p>
+            </section>
+
+            <section class="influence-detail influence-detail--compact vertov-panel">
+                <label for="vertov-detail" class="detail-close">×</label>
+
+                <span class="detail-kicker">Источник / документальное кино</span>
+
+                <p>
+                    <strong>Дзига Вертов</strong> разработал концепцию «кино-глаза» (Kino-Eye), согласно которой камера
+                    способна видеть реальность глубже и точнее, чем человеческий глаз.
+                </p>
+
+                <p>
+                    В его фильмах, таких как «Человек с киноаппаратом», отсутствует традиционный сюжет —
+                    вместо этого используется <strong>монтаж реальных событий</strong>, создающий новый смысл.
+                </p>
+
+                <blockquote>
+                    “life caught unawares”
+                </blockquote>
+
+                <p>
+                    Этот подход стал основой для документального кино, cinéma vérité и современных форматов
+                    репортажа, где камера фиксирует происходящее без постановки.
+                </p>
+
+                <p>
+                    Сегодня принципы Вертова используются в журналистике, документальных фильмах,
+                    видеоблогах и даже формате live-съёмки.
+                </p>
             </section>
         </div>
 
-        <section class="mt-32 text-center" data-aos="zoom-in">
+        <section class="mt-32 text-center awards-section" data-aos="zoom-in">
             <h2 class="text-4xl font-bold mb-16 italic">Триумф признания</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="p-6 border border-stone-200 rounded-2xl">
-                    <p class="text-4xl mb-2">🏆</p>
-                    <p class="font-bold text-stone-900">Канны</p>
-                    <p class="text-xs text-stone-400 mt-2 tracking-tighter italic">Золотая ветвь (1958)</p>
-                </div>
-                <div class="p-6 border border-stone-200 rounded-2xl">
-                    <p class="text-4xl mb-2">🦁</p>
-                    <p class="font-bold text-stone-900">Венеция</p>
-                    <p class="text-xs text-stone-400 mt-2 tracking-tighter italic">Золотой лев (1962, 1991)</p>
-                </div>
-                <div class="p-6 border border-stone-200 rounded-2xl">
-                    <p class="text-4xl mb-2">🐻</p>
-                    <p class="font-bold text-stone-900">Берлин</p>
-                    <p class="text-xs text-stone-400 mt-2 tracking-tighter italic">Золотой медведь (1977, 1987)</p>
-                </div>
-                <div class="p-6 border border-stone-200 rounded-2xl">
-                    <p class="text-4xl mb-2">🎬</p>
-                    <p class="font-bold text-stone-900">Оскар</p>
-                    <p class="text-xs text-stone-400 mt-2 tracking-tighter italic">Лучший фильм (1968, 1980)</p>
-                </div>
+
+            <div class="awards-card-grid">
+                <!-- Cannes -->
+                <article class="award-card">
+                    <div class="award-card__icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 21h8M12 17v4M7 4h10v4a5 5 0 01-10 0V4zM5 6H3a3 3 0 003 3M19 6h2a3 3 0 01-3 3"/>
+                        </svg>
+                    </div>
+                    <p class="award-card__label">Канны</p>
+
+                    <a href="https://www.festival-cannes.com/en/2020/palme-d-or-the-1950s/" target="_blank" class="award-source">
+                        <strong>Золотая пальмовая ветвь</strong>
+                        <span>The Cranes Are Flying (1958)</span>
+                        <small>Последний в списке: “Black Orpheus” (1959), выше — “The Cranes Are Flying”</small>
+                    </a>
+                </article>
+
+                <!-- Venice -->
+                <article class="award-card">
+                    <div class="award-card__icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3l2.2 5.5L20 9l-4.4 3.7L17 18l-5-2.9L7 18l1.4-5.3L4 9l5.8-.5L12 3z"/>
+                        </svg>
+                    </div>
+                    <p class="award-card__label">Венеция</p>
+
+                    <a href="https://www.labiennale.org/en/history-venice-film-festival" target="_blank" class="award-source">
+                        <strong>Золотой лев</strong>
+                        <span>Ivan’s Childhood (1962)</span>
+                        <small>Раздел “Golden Lions for Best Film and major awards since 1934” → 1962: Ivanovo detstvo</small>
+                    </a>
+
+                    <a href="https://www.labiennale.org/en/history-venice-film-festival" target="_blank" class="award-source">
+                        <strong>Золотой лев</strong>
+                        <span>Urga / Close to Eden (1991)</span>
+                        <small>Раздел “Golden Lions for Best Film and major awards since 1934” → 1991: Urga</small>
+                    </a>
+                </article>
+
+                <!-- Berlinale -->
+                <article class="award-card">
+                    <div class="award-card__icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 10c0-4 2.5-7 6-7s6 3 6 7v5a6 6 0 01-12 0v-5zM8 21h8M9 10h.01M15 10h.01"/>
+                        </svg>
+                    </div>
+                    <p class="award-card__label">Берлин</p>
+
+                    <a href="https://www.berlinale.de/en/archive/awards-juries/awards.html/y=1977/o=desc/p=1/rp=40" target="_blank" class="award-source">
+                        <strong>Золотой медведь</strong>
+                        <span>The Ascent (1977)</span>
+                        <small>International Jury 1977 → Golden Bear: “Woschozdenie”</small>
+                    </a>
+
+                    <a href="https://www.berlinale.de/en/archive/awards-juries/awards.html/y=1987/o=desc/p=1/rp=40" target="_blank" class="award-source">
+                        <strong>Золотой медведь</strong>
+                        <span>The Theme (1987)</span>
+                        <small>International Jury 1987 → Golden Bear: “Tema”</small>
+                    </a>
+                </article>
+
+                <!-- Oscars -->
+                <article class="award-card">
+                    <div class="award-card__icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.5-2.5v9L15 14M4 6h11v12H4z"/>
+                        </svg>
+                    </div>
+                    <p class="award-card__label">Оскар</p>
+
+                    <a href="https://www.oscars.org/oscars/ceremonies/1969/W?qt-honorees=1#block-quicktabs-honorees" target="_blank" class="award-source">
+                        <strong>Лучший иностранный фильм</strong>
+                        <span>War and Peace (1969)</span>
+                        <small>Прокрутить до “WINNERS & NOMINEES”</small>
+                    </a>
+
+                    <a href="https://www.oscars.org/oscars/ceremonies/1981/M?qt-honorees=1#block-quicktabs-honorees" target="_blank" class="award-source">
+                        <strong>Лучший иностранный фильм</strong>
+                        <span>Moscow Does Not Believe in Tears (1981)</span>
+                        <small>Прокрутить до “WINNERS & NOMINEES”</small>
+                    </a>
+                </article>
             </div>
         </section>
 
