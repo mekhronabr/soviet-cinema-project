@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap');
+
+:root {
+    --primary-red: #991b1b;
+    --stone-dark: #1c1917;
+    --stone-light: #f5f5f4;
+}
+
+body { font-family: 'Inter', sans-serif; }
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+/* Навигация */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #e7e5e4;
+}
+
+.logo {
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    color: var(--primary-red);
+    font-size: 1.5rem;
+}
+
+.nav-links a {
+    margin-left: 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover { color: var(--primary-red); }
+
+/* Hero */
+.hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('images/main.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+}
+
+.main-title { font-size: 4rem; margin-bottom: 1.5rem; line-height: 1.1; }
+.subtitle { font-size: 1.25rem; font-weight: 300; color: #d6d3d1; max-width: 600px; margin: 0 auto; }
+
+.cta-button {
+    margin-top: 2rem;
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: var(--primary-red);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #7f1d1d;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Карточки Эпох */
+.timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.era-link-card {
+    background: white;
+    padding: 3rem 2rem;
+    border: 1px solid #e7e5e4;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.era-link-card:hover {
+    border-color: var(--primary-red);
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.era-number {
+    font-size: 4rem;
+    font-weight: 900;
+    color: rgba(153, 27, 27, 0.05);
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.read-more {
+    display: block;
+    margin-top: 2rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--primary-red);
+}
+
+/* Улучшенный Glassmorphism */
+.glass-card-advanced {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.3));
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Стили карточек внутри "О проекте" */
+.task-item {
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.task-item:hover {
+    background: white;
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+.icon-box {
+    width: 48px;
+    height: 48px;
+    background: #fef2f2; /* Светло-красный */
+    color: var(--primary-red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    margin-bottom: 1.25rem;
+    transition: all 0.3s ease;
+}
+
+.task-item:hover .icon-box {
+    background: var(--primary-red);
+    color: white;
+}
+
+.icon-box svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Плавная подчеркивающая линия */
+.border-b-2 {
+    transition: all 0.5s ease;
+}
+
+.task-item:hover .border-b-2 {
+    border-color: var(--primary-red);
+}
+
+/* Современная карточка эпохи */
+.era-card-new {
+    position: relative;
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: block;
+    background: var(--stone-dark);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.era-image-preview {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    filter: grayscale(100%);
+    transition: all 0.7s ease;
+}
+
+.era-card-new:hover .era-image-preview {
+    transform: scale(1.1);
+    opacity: 0.8;
+    filter: grayscale(0%);
+}
+
+.era-content-overlay {
+    position: absolute;
+    inset: 0;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(to top, rgba(28, 25, 23, 0.9) 0%, transparent 60%);
+    z-index: 2;
+}
+
+.era-year-tag {
+    align-self: flex-start;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 99px;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.arrow-circle {
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.era-card-new:hover .arrow-circle {
+    background: var(--primary-red);
+    border-color: var(--primary-red);
+    transform: rotate(-45deg);
+}
+
+.era-card-new:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px -15px rgba(0,0,0,0.3);
+}
+
+#analysis {
+    transition: background-color 0.5s ease;
+}
+
+#analysis h4 {
+    letter-spacing: -0.02em;
+}
