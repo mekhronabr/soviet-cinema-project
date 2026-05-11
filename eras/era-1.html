@@ -7,9 +7,59 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Стили для боковой панели */
+        #statsDrawer {
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .drawer-open {
+            transform: translateX(0) !important;
+        }
+        .overlay-active {
+            display: block !important;
+            backdrop-filter: blur(4px);
+        }
+    </style>
 </head>
 <body class="bg-[#f9f7f2] text-stone-900">
+    <div id="drawerOverlay" onclick="toggleStats()" class="fixed inset-0 bg-black/40 z-[60] hidden transition-all duration-500"></div>
 
+    <div id="statsDrawer" class="fixed top-0 right-0 h-full w-full md:w-[500px] bg-white z-[70] shadow-2xl translate-x-full p-8 overflow-y-auto">
+        <div class="flex justify-between items-center mb-10">
+            <h3 class="text-2xl font-bold font-serif italic text-red-900">Архивные данные</h3>
+            <button onclick="toggleStats()" class="w-10 h-10 rounded-full bg-stone-100 flex items-center justify-center hover:bg-red-700 hover:text-white transition-all">✕</button>
+        </div>
+
+        <div class="space-y-8">
+            <p class="text-sm text-stone-500 leading-relaxed uppercase tracking-widest">Таблица: Развитие киносети (1917-1929) </p>
+            
+            <div class="overflow-hidden border border-stone-200 rounded-xl">
+                <table class="w-full text-left text-sm">
+                    <thead class="bg-stone-50 border-b border-stone-200">
+                        <tr>
+                            <th class="p-4 font-bold text-red-900">Год</th>
+                            <th class="p-4 font-bold">Установки (тыс.)</th>
+                            <th class="p-4 font-bold">Тираж (экз.)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-stone-100">
+                        <tr><td class="p-4 font-mono font-bold">1917</td><td class="p-4">1.5</td><td class="p-4">300</td></tr>
+                        <tr><td class="p-4 font-mono font-bold">1925</td><td class="p-4">4.2</td><td class="p-4">1,200</td></tr>
+                        <tr><td class="p-4 font-mono font-bold">1929</td><td class="p-4">9.8</td><td class="p-4">3,500</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="bg-red-50 p-6 rounded-2xl border border-red-100">
+                <h4 class="font-bold text-red-900 mb-2">Аудитория </h4>
+                <ul class="text-sm space-y-2 text-stone-700">
+                    <li><strong>1917:</strong> Городское население</li>
+                    <li><strong>1925:</strong> Пролетариат, армия</li>
+                    <li><strong>1929:</strong> Рабочие и село</li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-stone-200 px-6 py-4">
         <div class="max-w-5xl mx-auto flex justify-between items-center">
             <a href="../index.html" class="flex items-center gap-2 text-stone-500 hover:text-red-700 transition-colors">
@@ -50,6 +100,12 @@
                         В 1919 году кинопромышленность была национализирована. Появились знаменитые <strong>агитпоезда</strong>, которые возили передвижные киноустановки по всей стране, показывая хронику и первые короткометражки.
                     </p>
                 </section>
+                <button onclick="toggleStats()" class="group flex items-center gap-4 bg-white border border-stone-200 p-2 pr-6 rounded-full hover:border-red-700 transition-all shadow-sm mt-8">
+                    <div class="w-10 h-10 rounded-full bg-red-700 text-white flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                    </div>
+                    <span class="text-sm font-bold uppercase tracking-widest text-stone-600 group-hover:text-red-700">Открыть статистику эпохи</span>
+                </button>
 
                 <blockquote class="bg-stone-900 text-white p-10 rounded-3xl relative overflow-hidden" data-aos="flip-up">
                     <svg class="absolute -top-4 -left-4 w-24 h-24 text-white/5" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C14.9124 8 14.017 7.10457 14.017 6V5C14.017 3.89543 14.9124 3 16.017 3H19.017C21.2261 3 23.017 4.79086 23.017 7V15C23.017 18.866 19.883 22 16.017 22H14.017V21ZM1.017 21V18C1.017 16.8954 1.91243 16 3.017 16H6.017C6.56929 16 7.017 15.5523 7.017 15V9C7.017 8.44772 6.56929 8 6.017 8H3.017C1.91243 8 1.017 7.10457 1.017 6V5C1.017 3.89543 1.91243 3 3.017 3H6.017C8.22614 3 10.017 4.79086 10.017 7V15C10.017 18.866 6.883 22 3.017 22H1.017V21Z"/></svg>
@@ -140,5 +196,16 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="../animations.js"></script>
+    <script>
+    function toggleStats() {
+        const drawer = document.getElementById('statsDrawer');
+        const overlay = document.getElementById('drawerOverlay');
+        drawer.classList.toggle('drawer-open');
+        overlay.classList.toggle('overlay-active');
+        
+        // Блокировка скролла при открытой панели
+        document.body.style.overflow = drawer.classList.contains('drawer-open') ? 'hidden' : 'auto';
+    }
+</script>
 </body>
 </html>

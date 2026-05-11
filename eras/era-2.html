@@ -7,8 +7,80 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Стили для боковой панели */
+        #statsDrawer {
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .drawer-open {
+            transform: translateX(0) !important;
+        }
+        .overlay-active {
+            display: block !important;
+            backdrop-filter: blur(4px);
+        }
+    </style>
 </head>
 <body class="bg-[#f9f7f2] text-stone-900">
+    <div id="drawerOverlay" onclick="toggleStats()" class="fixed inset-0 bg-black/40 z-[60] hidden transition-all duration-500"></div>
+
+    <div id="statsDrawer" class="fixed top-0 right-0 h-full w-full md:w-[600px] bg-white z-[70] shadow-2xl translate-x-full p-8 overflow-y-auto">
+        <div class="flex justify-between items-center mb-10">
+            <h3 class="text-2xl font-bold font-serif italic text-red-900">Идеологическая структура</h3>
+            <button onclick="toggleStats()" class="w-10 h-10 rounded-full bg-stone-100 flex items-center justify-center hover:bg-red-700 hover:text-white transition-all">✕</button>
+        </div>
+
+        <div class="space-y-8">
+            <p class="text-sm text-stone-500 leading-relaxed uppercase tracking-widest">Таблица: Жанровая система и пропаганда (1930-1953)</p>
+            
+            <div class="overflow-hidden border border-stone-200 rounded-xl">
+                <table class="w-full text-left text-sm">
+                    <thead class="bg-stone-50 border-b border-stone-200">
+                        <tr>
+                            <th class="p-4 font-bold text-red-900">Жанр</th>
+                            <th class="p-4 font-bold">Идеологическая цель</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-stone-100">
+                        <tr class="hover:bg-red-50/50 transition-colors">
+                            <td class="p-4 font-bold">Исторический эпос</td>
+                            <td class="p-4">Обоснование государственности и единства</td>
+                        </tr>
+                        <tr class="hover:bg-red-50/50 transition-colors">
+                            <td class="p-4 font-bold">Музыкальная комедия</td>
+                            <td class="p-4">Демонстрация народного счастья и оптимизма</td>
+                        </tr>
+                        <tr class="hover:bg-red-50/50 transition-colors">
+                            <td class="p-4 font-bold">Историко-революционная драма</td>
+                            <td class="p-4">Канонизация образа вождя и партии</td>
+                        </tr>
+                        <tr class="hover:bg-red-50/50 transition-colors">
+                            <td class="p-4 font-bold">Военная драма</td>
+                            <td class="p-4">Патриотическое воспитание и ненависть к врагу</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="bg-stone-900 text-white p-6 rounded-2xl shadow-inner">
+                <h4 class="font-bold text-red-500 mb-4 uppercase text-xs tracking-widest">Знаковые произведения</h4>
+                <div class="grid grid-cols-1 gap-4 text-sm opacity-90">
+                    <div class="border-l-2 border-red-700 pl-4">
+                        <strong>Эпос:</strong> «Александр Невский», «Иван Грозный»
+                    </div>
+                    <div class="border-l-2 border-red-700 pl-4">
+                        <strong>Комедия:</strong> «Веселые ребята», «Кубанские казаки»
+                    </div>
+                    <div class="border-l-2 border-red-700 pl-4">
+                        <strong>Драма:</strong> «Ленин в Октябре», «Человек с ружьем»
+                    </div>
+                    <div class="border-l-2 border-red-700 pl-4">
+                        <strong>Война:</strong> «Два бойца», «Секретарь райкома»
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-stone-200 px-6 py-4">
         <div class="max-w-5xl mx-auto flex justify-between items-center">
@@ -50,6 +122,12 @@
                         Этот период порождает феномен "музыкальной комедии". Фильмы вроде «Волга-Волга» и «Веселые ребята» создавали образ беззаботной, поющей и процветающей страны, контрастируя с суровой реальностью индустриализации и репрессий.
                     </p>
                 </section>
+                <button onclick="toggleStats()" class="group flex items-center gap-4 bg-white border border-stone-200 p-2 pr-6 rounded-full hover:border-red-700 transition-all shadow-sm mt-8">
+                    <div class="w-10 h-10 rounded-full bg-red-700 text-white flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                    </div>
+                    <span class="text-sm font-bold uppercase tracking-widest text-stone-600 group-hover:text-red-700">Анализ жанровой системы</span>
+                </button>
 
                 <blockquote class="bg-red-900 text-white p-10 rounded-3xl relative overflow-hidden" data-aos="flip-up">
                     <p class="text-2xl font-serif italic relative z-10 leading-snug text-center">«Жить стало лучше, товарищи. Жить стало веселее!»</p>
@@ -151,5 +229,16 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="../animations.js"></script>
+    <script>
+        function toggleStats() {
+            const drawer = document.getElementById('statsDrawer');
+            const overlay = document.getElementById('drawerOverlay');
+            drawer.classList.toggle('drawer-open');
+            overlay.classList.toggle('overlay-active');
+            
+            // Блокировка скролла
+            document.body.style.overflow = drawer.classList.contains('drawer-open') ? 'hidden' : 'auto';
+        }
+    </script>
 </body>
 </html>
